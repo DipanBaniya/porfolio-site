@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 :root{
-  --text-color: #FFF4B7;
+  --text-color: #000000;
   --primary-color: #006A67;
   --bg-color: #000B58;
   --check-color: #003161;
@@ -25,17 +25,16 @@
 body {
   font-family: 'Playfair Display';
   line-height: 1.6;
-  background-color: var(--bg-color);
   color: var(--text-color);
-  padding: 10px;
+
 }
 nav ul {
   display: flex;
   justify-content: center;
   list-style: none;
-  background-color: var(--primary-color);
-  border-radius: 5px;
+  /* background-color: rgb(29, 101, 29); */
   padding: 10px;
+  height: 50px;
 }
 
 nav ul li {
@@ -51,14 +50,13 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #0F172A;
+  color: #ff0000;
+  font-size: 1.2rem;
 }
 
 section {
-  margin: 40px 0;
   padding: 20px;
-  background: var(--check-color);
-  border-radius: 8px;
+  /* background: var(--check-color); */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 #home{
@@ -67,7 +65,7 @@ section {
   color: var(--text-color);
   flex-direction: column;
   justify-content: center;
-  background-image: url(/assets/images/2.jpg);
+  /* background-image: url(/assets/images/2.jpg); */
 }
 
 h1 {
@@ -107,22 +105,34 @@ h4{
 #expertise {
   display: flex;
   flex-direction: column;
-  height: 820px;
+  height: 950px;
+  /* background-color: aqua; */
 }
 .tools{
   margin-bottom: 20px;
+  width: 400px;
+  transition: 0.3s;
+}
+.tools:hover{
+  transform: scale(1.03);
+}
+.tools h3{
+  margin-bottom: 10px;
 }
 .tools ul {
   display: flex;
-  flex-direction: row;
   align-items: center;
 }
 .tools ul li{
+  height: 110px;
+  background-color: var(--primary-color);
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   list-style: none;
-  padding: 3px;
+  padding: 10px;
   margin-right: 20px;
   transition: 0.3s;
 }
@@ -135,64 +145,137 @@ h4{
   width: 50px;
   height: auto;
 }
+
+#projects{
+  height: 400px;
+  /* background-color: #a0934b; */
+}
+#projects h2 {
+  margin-bottom: 20px;
+}
 .project-grid {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 20px;
-  overflow-x: auto;
   padding-bottom: 10px;
   scroll-snap-type: x mandatory;
+  margin-bottom: 20px;
 }
 
 .project-card {
-  flex: 0 0 300px;
-  scroll-snap-align: start;
   background: var(--primary-color);
   padding: 15px;
-  border: 1px solid #ddd;
   border-radius: 8px;
-  transition: transform 0.3s;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+  width: 300px;
 }
 
+.project-card a {
+  text-decoration: none;
+  color: var(--text-color);
+}
 .project-card:hover {
-  transform: translateY(-5px);
+  background-color: #0EA5E9;
+  transform: scale(1.1);
+}
+#projects button {
+  margin: 0 15px 0  0 ;
+  font: inherit;
+  color: var(--text-color);
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  padding: 3px 6px;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
-/* #contact {
-  width: 400px;
-} */
+#projects button:hover{
+  transform: scale(1.01);
+  box-shadow: 0 0 12px rgba(254, 254, 254, 0.6);
+}
 
+#contact{
+  display: flex;
+  flex-direction: row;
+  height: 500px;
+  /* background-color: aquamarine; */
+}
+#contact h2{
+  width: 30%;
+  font-size: 4rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
 form {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
+  width: 70%;
 }
 
-form input, form textarea {
+form input, form textarea, form button {
   padding: 10px;
   margin-bottom: 10px;
-  border: 1px solid #ccc;
+  border: none;
   border-radius: 4px;
+  width: 300px;
+  font-family: inherit;
+  font-size: 15px;
+  transition: 0.5s;
 }
-
+form input:focus, form textarea:focus{
+  transform: scale(1.1);
+  margin-bottom: 15px;
+  outline: none;
+}
+form textarea{
+  resize: none;
+}
 form button {
   padding: 10px;
-  background-color: #0EA5E9;
+  background-color: var(--primary-color);
   color: var(--text-color);
   border: none;
   cursor: pointer;
+  font-size: 20px;
   transition: background-color 0.3s ease;
 }
 
 form button:hover {
-  background-color: #555;
+  transform: scale(1.01);
+  box-shadow: 0 0 12px rgba(254, 254, 254, 0.6);
+}
+.links{
+  display: flex;
+  justify-content: center;
+
 }
 
+.links a img, .links h4{
+  width: 50px;
+  height: auto;
+  transition: 0.5s;
+  margin-right: 10px;
+  color: var(--text-color);
+}
+.links a img:hover{
+  filter: invert(1);
+}
 footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  margin-top: 40px;
+  height: 50px;
   font-size: 0.9rem;
   color: #777;
+  background-color: #4f4f4f;
 }
 
 /* Responsive adjustments */
